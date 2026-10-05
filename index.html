@@ -659,7 +659,7 @@ body{background:var(--light)}
 
 /* ===== Mobile: 2-row grid on screen, swipe sideways for more ===== */
 @media(max-width:600px){
-.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/3);gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:2px 2px 14px;margin:0 -4px;scrollbar-width:none}
+.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,3),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/3);gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:2px 2px 14px;margin:0 -4px;scrollbar-width:none}
 .products-grid::-webkit-scrollbar{display:none}
 .products-grid>.product-card{min-width:0;scroll-snap-align:start}
 .products-grid>div[style*="grid-column"]{grid-column:1 / span 2 !important;grid-row:1 / span 3;scroll-snap-align:start}
@@ -714,7 +714,7 @@ body{background:var(--light)}
 .trending-card-excerpt{font-size:12.5px;line-height:1.6;-webkit-line-clamp:2}
 /* Coupon Codes: 3 rows, swipe left/right */
 .coupons-section{padding:20px 0}
-.coupons-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:88%;gap:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:2px 2px 12px;margin:0 -2px}
+.coupons-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,3),auto);grid-auto-flow:column;grid-auto-columns:88%;gap:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:2px 2px 12px;margin:0 -2px}
 .coupons-grid::-webkit-scrollbar{display:none}
 .coupons-grid>.coupon-card-v2{min-width:0;scroll-snap-align:start}
 .coupons-grid>p{grid-column:1 / span 1 !important;grid-row:1 / span 3;width:calc(100vw - 40px);margin:0}
@@ -765,6 +765,11 @@ body{background:var(--light)}
 .hs-arrow.next{right:-6px}
 @media(max-width:600px){.hs-arrow{width:38px;height:38px;font-size:14px}.hs-arrow.prev{left:-4px}.hs-arrow.next{right:-4px}}
 
+/* extra built-in icons (the icon set above only contains the icons the original page used) */
+.fas.fa-microphone,.far.fa-microphone{--fa-i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20384%20512%22%3E%3Cpath%20d=%22M192%200C139%200%2096%2043%2096%2096V256c0%2053%2043%2096%2096%2096s96-43%2096-96V96c0-53-43-96-96-96zM64%20216c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v40c0%2089.1%2066.2%20162.7%20152%20174.4V464H120c-13.3%200-24%2010.7-24%2024s10.7%2024%2024%2024h144c13.3%200%2024-10.7%2024-24s-10.7-24-24-24H216V430.4c85.8-11.7%20152-85.3%20152-174.4V216c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v40c0%2070.7-57.3%20128-128%20128s-128-57.3-128-128V216z%22/%3E%3C/svg%3E")}
+.fas.fa-times,.far.fa-times{--fa-i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20384%20512%22%3E%3Cpath%20d=%22M342.6%20150.6c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L192%20210.7%2086.6%20105.4c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L146.7%20256%2041.4%20361.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200L192%20301.3%20297.4%20406.6c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L237.3%20256%20342.6%20150.6z%22/%3E%3C/svg%3E")}
+.fas.fa-history,.far.fa-history{--fa-i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20512%20512%22%3E%3Cpath%20fill-rule=%22evenodd%22%20d=%22M256%2032a224%20224%200%201%200%200%20448%20224%20224%200%201%200%200-448zM232%20112h48v132l72%2046-26%2040-94-60z%22/%3E%3C/svg%3E")}
+.fas.fa-tag,.far.fa-tag{--fa-i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20512%20512%22%3E%3Cpath%20fill-rule=%22evenodd%22%20d=%22M32%2064v160l224%20224%20160-160L192%2064H32zM112%20112a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64z%22/%3E%3C/svg%3E")}
 /* ============ ADVANCED SEARCH BAR ============ */
 #searchInput{padding-right:112px}
 .search-tools{position:absolute;right:50px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:2px;z-index:2}
@@ -796,7 +801,7 @@ body{background:var(--light)}
 
 /* ============ COUPON CODES: 3x2 swipe grid, infinite loop ============ */
 @media(min-width:601px){
-.coupons-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
+.coupons-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,2),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
 .coupons-grid::-webkit-scrollbar{display:none}
 .coupons-grid>.coupon-card-v2{min-width:0;scroll-snap-align:start}
 .coupons-grid>p{grid-column:1 / span 3 !important;grid-row:1 / span 2}
@@ -841,7 +846,7 @@ body{background:var(--light)}
 .js-anim .reveal.in{opacity:1;transform:none}
 /* ============ ALL PRODUCTS: laptop/tablet = 2-row slider with arrows (infinite loop); phone = swipe ============ */
 @media(min-width:601px){
-.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
+.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,2),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
 .products-grid::-webkit-scrollbar{display:none}
 .products-grid>.product-card{min-width:0;scroll-snap-align:start}
 .products-grid>div[style*="grid-column"]{grid-column:1 / span 3 !important;grid-row:1 / span 2}
@@ -887,6 +892,141 @@ body{background:var(--light)}
 .products-grid.fit-grid{grid-auto-flow:row !important;grid-template-rows:none !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;grid-auto-columns:auto !important;overflow-x:hidden;scroll-snap-type:none}
 @media(min-width:992px){.products-grid.fit-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}}
 .products-grid.fit-grid>div[style*="grid-column"]{grid-column:1 / -1 !important;grid-row:auto !important}
+/* ============ 1000 products / 500 coupons: paging, fit grids, filters, About page ============ */
+.products-grid [hidden],.coupons-grid [hidden],.coupons-grid [data-cf]{display:none !important}
+.coupons-grid.fit-grid{grid-auto-flow:row !important;grid-template-rows:none !important;grid-template-columns:minmax(0,1fr) !important;grid-auto-columns:auto !important;overflow-x:hidden;scroll-snap-type:none}
+@media(min-width:601px){.coupons-grid.fit-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media(min-width:992px){.coupons-grid.fit-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
+.coupons-grid.fit-grid>p{grid-column:1 / -1 !important;grid-row:auto !important;width:auto}
+.mt-pager{display:flex;flex-direction:column;align-items:center;gap:10px;margin:18px 0 6px}
+.mt-pager[hidden]{display:none}
+.mt-pager-info{font-size:13px;color:var(--gray)}
+.mt-pager-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.mt-pager button{border:none;border-radius:50px;padding:11px 24px;font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.mt-pager .mt-more{background:var(--gradient);color:#fff;box-shadow:0 6px 18px rgba(106,71,240,.3)}
+.mt-pager .mt-all{background:#fff;color:var(--primary);border:1.5px solid var(--primary)}
+.mt-pager button:hover{transform:translateY(-2px)}
+.coupon-filter-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#fff;border-radius:14px;padding:10px 14px;margin:0 0 12px;font-size:13px;box-shadow:0 4px 14px rgba(90,54,232,.12)}
+.coupon-filter-bar[hidden]{display:none}
+.coupon-filter-bar button{border:none;background:var(--primary);color:#fff;border-radius:50px;padding:7px 16px;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.admin-cat-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;background:#fff}
+.admin-cat-chip{display:inline-block;background:#f1f0f9;border-radius:50px;padding:5px 12px;margin:3px;font-size:12.5px}
+/* ============ ADMIN: search bars (Manage Products, Coupon Codes) ============ */
+.admin-search{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.admin-search-box{position:relative;flex:1 1 260px;min-width:0}
+.admin-search-box>.fa-search{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gray);pointer-events:none}
+.admin-search-box input{width:100%;padding:12px 40px 12px 40px;border:2px solid #e5e7eb;border-radius:50px;font-family:inherit;font-size:14px;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.admin-search-box input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(106,71,240,.12)}
+.admin-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:none;border-radius:50%;background:#f1f0f9;color:var(--gray);cursor:pointer;display:none;align-items:center;justify-content:center;padding:0}
+.admin-search-clear.show{display:flex}
+.admin-search-clear:hover{background:var(--primary);color:#fff}
+.admin-search-info{font-size:13px;color:var(--gray);white-space:nowrap}
+.admin-search-empty{text-align:center;color:var(--gray);padding:22px;font-size:14px}
+/* ============ ALL PRODUCTS - FINAL RESPONSIVE GRID ============
+   * columns come from one variable (--cols) per screen size: phone 3, tablet 3, laptop 4, desktop 5
+   * every card has the same shape: square image box (aspect-ratio 1/1), one-line category + title, button pinned to the bottom
+   * the script (pager) picks the rows so the grid is always full: it re-balances whenever the product count changes */
+.products-grid{--cols:3;--gap:8px}
+@media(min-width:601px){.products-grid{--cols:3;--gap:16px}}
+@media(min-width:992px){.products-grid{--cols:4;--gap:16px}}
+@media(min-width:1400px){.products-grid{--cols:5;--gap:18px}}
+.products-grid{gap:var(--gap);grid-auto-columns:calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));align-items:stretch}
+.products-grid.fit-grid{grid-template-columns:repeat(var(--cols),minmax(0,1fr)) !important;grid-auto-columns:auto !important;gap:var(--gap)}
+.products-grid>.product-card{height:100%;container-type:inline-size}
+.product-card .product-img-container{aspect-ratio:1 / 1;height:auto !important;width:100%}
+.product-card .product-info{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.product-card .product-info .btn-buy{flex:0 0 auto;margin-top:auto;width:100%}
+.product-card .product-category,.product-card .product-title{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* the SALE / NEW badge always sits on the bottom edge of the square image, whatever the card width */
+@supports (width:1cqw){
+.product-card .product-badge{top:calc(100cqw - 12px) !important}
+@media(max-width:600px){.product-card .product-badge{top:calc(100cqw - 9px) !important}}
+/* text scales with the card, so 3, 4 or 5 columns all look balanced */
+.product-card .product-category{font-size:clamp(7.5px,4.4cqw,11px)}
+.product-card .product-title{font-size:clamp(11px,6.4cqw,15px)}
+.product-card .price-range{font-size:clamp(10.5px,6cqw,14px)}
+.product-card .btn-buy{font-size:clamp(10.5px,5.8cqw,14px)}
+}
+@media(max-width:600px){.products-grid{padding-bottom:12px}}
+
+/* ===== DEAL OF THE DAY: same look as desktop, scaled for phones ===== */
+.deal-info .price-range{display:inline-block;border:2px solid var(--primary);border-radius:50px;padding:8px 24px;color:var(--primary);font-weight:800;line-height:1.2;white-space:nowrap}
+.deal-info .btn-buy{border-radius:50px}
+.deal-timer-item{border-radius:var(--radius-sm)}
+@media(max-width:768px){
+  .deal-card{grid-template-columns:.9fr 1.1fr !important;border-radius:16px}
+  .deal-img{padding:10px !important;min-height:0 !important}
+  .deal-slideshow{min-height:0 !important}
+  .deal-slideshow img{max-height:220px !important;width:100%;border-radius:4px}
+  .deal-slide-btn{width:24px;height:24px;font-size:9px}
+  .deal-slide-btn.prev{left:2px}.deal-slide-btn.next{right:2px}
+  .deal-slide-dots{bottom:2px;gap:4px}
+  .deal-slide-dot{width:6px;height:6px}.deal-slide-dot.active{width:14px}
+  .deal-info{padding:14px 12px !important;min-width:0}
+  .deal-tag{font-size:8.5px !important;padding:5px 10px !important;margin-bottom:8px !important;gap:4px}
+  .deal-info h2{font-size:15px !important;line-height:1.25;margin-bottom:0 !important}
+  .deal-info .product-price{margin:8px 0 !important}
+  .deal-info .price-range{font-size:16px !important;padding:5px 14px;border-width:1.5px}
+  .deal-countdown{margin-bottom:10px !important}
+  .deal-countdown p{font-size:10.5px !important;margin-bottom:6px !important}
+  .deal-timer{gap:5px}
+  .deal-timer-item{flex:1;min-width:0 !important;padding:7px 2px !important;border-radius:9px}
+  .deal-timer-item .num{font-size:16px !important}
+  .deal-timer-item .lbl{font-size:7.5px !important}
+  .deal-info .btn-buy{max-width:none !important;width:100%;padding:10px 8px !important;font-size:12px !important;gap:5px}
+}
+@media(max-width:360px){
+  .deal-info{padding:12px 9px !important}
+  .deal-info h2{font-size:13.5px !important}
+  .deal-info .price-range{font-size:14px !important;padding:4px 10px}
+  .deal-timer-item .num{font-size:14px !important}
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+html{scroll-behavior:smooth}
+@keyframes revealUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes fadeUpSoft{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes shine{from{left:-75%}to{left:130%}}
+@keyframes flame{0%,100%{transform:scale(1) rotate(0)}30%{transform:scale(1.18) rotate(-6deg)}60%{transform:scale(.96) rotate(5deg)}}
+@keyframes tickPop{0%{transform:scale(1.22);opacity:.55}100%{transform:scale(1);opacity:1}}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+
+/* scroll reveal (class added by script, so nothing is hidden if JS fails) */
+.reveal:not(.in){opacity:0}
+.reveal.in{animation:revealUp .65s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--rd,0s)}
+
+/* page load */
+.header{animation:fadeDown .55s cubic-bezier(.2,.7,.2,1) backwards}
+.hero-main-content>*{animation:fadeUpSoft .7s cubic-bezier(.2,.7,.2,1) backwards}
+.hero-main-content>*:nth-child(1){animation-delay:.1s}
+.hero-main-content>*:nth-child(2){animation-delay:.2s}
+.hero-main-content>*:nth-child(3){animation-delay:.3s}
+.hero-main-content>*:nth-child(4){animation-delay:.4s}
+.hero-main-content>*:nth-child(n+5){animation-delay:.5s}
+
+/* buttons: light sweep + press feedback */
+.btn-buy{position:relative;overflow:hidden}
+.btn-buy::before{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);pointer-events:none}
+.btn-buy:hover::before{animation:shine .75s ease}
+.btn-buy:active,.nav-item:active{transform:scale(.97)}
+.ripple-dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+
+/* icons + timer */
+#dealSection .section-title i,.deal-tag i{display:inline-block;animation:flame 2.2s ease-in-out infinite;transform-origin:50% 80%}
+.deal-timer-item .num.tick{animation:tickPop .35s ease-out}
+
+/* hover polish (only on devices that can hover) */
+@media(hover:hover){
+  .nav-item{transition:var(--transition),transform .25s ease}
+  .nav-item:hover{transform:translateY(-2px)}
+  .header-action-btn{transition:var(--transition)}
+  .header-action-btn:hover{transform:translateY(-2px)}
+  .category-card:hover,.trending-card:hover,.coupon-card-v2:hover,.review-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .category-card,.trending-card,.coupon-card-v2,.review-card{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,background-color .3s ease,color .3s ease,border-color .3s ease}
+}
+@media (prefers-reduced-motion:reduce){.reveal:not(.in){opacity:1}html{scroll-behavior:auto}}
+@media print{.reveal:not(.in){opacity:1}}
     </style>
     <script>/* placeholder so early image errors never throw; replaced by the real handlers below */window.logoError=window.imgFallback=function(){};</script>
     <!-- Vercel Web Analytics + Speed Insights (active only on Vercel deployments) -->
@@ -929,8 +1069,8 @@ body{background:var(--light)}
         <div class="search-container">
             <input type="text" id="searchInput" aria-label="Search products" autocomplete="off" inputmode="search" enterkeyhint="search" spellcheck="false" placeholder="Search products, brands, categories…" oninput="handleSearch()" onfocus="handleSearch()">
             <div class="search-tools">
-                <button type="button" class="search-tool-btn" id="searchClearBtn" aria-label="Clear search"><i class="fas fa-times"></i></button>
-                <button type="button" class="search-tool-btn" id="searchVoiceBtn" aria-label="Search by voice"><i class="fas fa-microphone"></i></button>
+                <button type="button" class="search-tool-btn" id="searchClearBtn" aria-label="Clear search"><svg viewBox="0 0 384 512" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+                <button type="button" class="search-tool-btn" id="searchVoiceBtn" aria-label="Search by voice"><svg viewBox="0 0 384 512" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h144c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"/></svg></button>
             </div>
             <button class="search-btn" onclick="performSearch()" aria-label="Search"><i class="fas fa-search"></i></button>
             <div class="search-suggestions" id="searchSuggestions"></div>
@@ -1166,6 +1306,7 @@ body{background:var(--light)}
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
+                <a href="#" onclick="event.preventDefault();openLegalPage('about')">About MyTrendly</a>
                 <a href="#" onclick="event.preventDefault();openLegalPage('contact')">Contact Us</a>
                 <a href="#" onclick="event.preventDefault();openLegalPage('ip')">Report IP Infringement</a>
                 <a href="#" onclick="event.preventDefault();openLegalPage('data')">Data & Compliance</a>
@@ -3215,9 +3356,19 @@ function renderAdminTickets() {
                     <option value="resolved" ${st === 'resolved' ? 'selected' : ''}>Resolved</option>
                     <option value="closed" ${st === 'closed' ? 'selected' : ''}>Closed</option>
                 </select>
+                <button type="button" onclick="deleteTicket(${Number(t.id)})" title="Delete ticket" aria-label="Delete ticket" style="padding:5px 10px;border:none;border-radius:6px;background:#fee2e2;color:#b91c1c;cursor:pointer;font-size:12px;"><i class="fas fa-trash"></i></button>
             </div>
         </div>`;
     }).join('');
+}
+
+async function deleteTicket(id) {
+    if (!confirm('Permanently delete this support ticket?')) return;
+    const { data, error } = await _supabase.from('support_tickets').delete().eq('id', id).select();
+    if (error) { showToast('Error: ' + error.message, 'error'); return; }
+    if (!data || !data.length) { showToast('Not deleted - check the Supabase delete policy for support_tickets', 'error'); return; }
+    showToast('Ticket deleted', 'success');
+    await syncFromSupabase();
 }
 
 async function updateTicketStatus(id, stat) {
@@ -3618,6 +3769,7 @@ function close404() {
         while(W>0&&el.scrollWidth-el.clientWidth<W+2&&guard<6){addSet();guard++}
     }
     ensure();
+    window.mtNavRefresh=function(fn){Array.prototype.slice.call(el.querySelectorAll('[data-clone="1"]')).forEach(function(n){n.remove()});if(fn)fn(el);originals=Array.prototype.slice.call(el.querySelectorAll('.nav-item'));clonesAdded=0;W=0;ensure()};
     window.addEventListener('resize',function(){W=measure();ensure()});
     window.addEventListener('load',function(){W=measure();ensure()});
 
@@ -3741,168 +3893,7 @@ function close404() {
     setup('productsGrid');
 })();
 </script>
-<script>
-/* ===== ADVANCED SEARCH: highlighted suggestions with thumbnails, recent searches, category chips,
-   keyboard navigation, voice search, clear button, multi-word matching ===== */
-(function(){
-    var input=document.getElementById('searchInput');
-    var box=document.getElementById('searchSuggestions');
-    var clearBtn=document.getElementById('searchClearBtn');
-    var voiceBtn=document.getElementById('searchVoiceBtn');
-    if(!input||!box)return;
-    var KEY='mt_recent_searches',activeIdx=-1;
 
-    function getRecent(){try{var a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a.slice(0,6):[]}catch(e){return[]}}
-    function saveRecent(q){
-        q=String(q||'').trim();if(q.length<2)return;
-        try{var a=getRecent().filter(function(x){return x.toLowerCase()!==q.toLowerCase()});a.unshift(q);localStorage.setItem(KEY,JSON.stringify(a.slice(0,6)))}catch(e){}
-    }
-    function clearRecent(){try{localStorage.removeItem(KEY)}catch(e){}}
-    function esc(v){return escapeHtml(String(v==null?'':v))}
-    function norm(v){return String(v||'').toLowerCase().replace(/['\u2019`]/g,'')}
-
-    /* multi-word, apostrophe-insensitive matching (used by suggestions AND the results grid) */
-    window.matchesQuery=function(p,q){
-        var hay=norm((p.name||'')+' '+(p.category||'')+' '+(catNames[p.category]||'')+' '+(p.price_range||'')+' '+(p.badge||''));
-        var toks=norm(q).split(/\s+/).filter(Boolean);
-        return toks.length>0&&toks.every(function(t){return hay.indexOf(t)>-1});
-    };
-
-    function highlight(text,toks){
-        var t=String(text||'');
-        if(!toks.length)return esc(t);
-        var re=new RegExp('('+toks.map(function(x){return x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','ig');
-        return t.split(re).map(function(part,i){return i%2?'<mark>'+esc(part)+'</mark>':esc(part)}).join('');
-    }
-    function head(label,btnLabel,act){
-        return '<div class="ss-head"><span>'+esc(label)+'</span>'+(btnLabel?'<button type="button" data-act="'+act+'">'+esc(btnLabel)+'</button>':'')+'</div>';
-    }
-    function chips(list){
-        return '<div class="ss-chips">'+list.map(function(c){return '<button type="button" class="ss-chip" data-act="cat" data-cat="'+esc(c)+'">'+esc(catNames[c]||c)+'</button>'}).join('')+'</div>';
-    }
-    var POPULAR=['electronics','mobiles','fashion','beauty','home','gaming','computers','health'];
-
-    function setTools(){
-        var has=input.value.trim().length>0;
-        if(clearBtn)clearBtn.classList.toggle('show',has);
-    }
-    function closeSug(){box.classList.remove('show');activeIdx=-1}
-
-    function render(){
-        setTools();
-        var raw=input.value.trim(),q=raw.toLowerCase(),html='';
-        activeIdx=-1;
-        if(q.length<2){
-            var rec=getRecent();
-            if(rec.length){
-                html+=head('Recent searches','Clear','clear-recent');
-                html+=rec.map(function(r){return '<div class="search-suggestion-item" data-act="recent" data-q="'+esc(r)+'"><span class="ss-ico"><i class="fas fa-history"></i></span><div class="ss-main"><div class="ss-name">'+esc(r)+'</div></div></div>'}).join('');
-            }
-            html+=head('Popular categories')+chips(POPULAR);
-            box.innerHTML=html;box.classList.add('show');return;
-        }
-        var toks=norm(q).split(/\s+/).filter(Boolean);
-        var list=products.filter(function(p){return window.matchesQuery(p,q)}).map(function(p){
-            var n=norm(p.name);
-            var sc=n.indexOf(norm(q))===0?0:(n.split(/\s+/).some(function(w){return w.indexOf(toks[0])===0})?1:2);
-            return {p:p,sc:sc};
-        }).sort(function(a,b){return a.sc-b.sc});
-        var total=list.length;
-        if(!total){
-            html+='<div class="ss-empty"><i class="fas fa-search" style="font-size:22px;display:block;margin-bottom:8px;opacity:.5"></i>No products found for &ldquo;'+esc(raw)+'&rdquo;</div>'+head('Try a category')+chips(POPULAR);
-            box.innerHTML=html;box.classList.add('show');return;
-        }
-        html+=head(total+' product'+(total>1?'s':'')+' found');
-        html+=list.slice(0,6).map(function(o){
-            var p=o.p,imgs=Array.isArray(p.images)&&p.images.length?p.images:[{url:placeholderImage}];
-            var src=esc(safeImg(imgUrl(imgs[0])));
-            return '<div class="search-suggestion-item" data-act="product" data-id="'+Number(p.id)+'">'
-                +'<img class="ss-thumb" src="'+src+'" alt="" loading="lazy" onerror="imgFallback(this)">'
-                +'<div class="ss-main"><div class="ss-name">'+highlight(p.name,toks)+'</div><div class="ss-sub">'+esc(catNames[p.category]||p.category||'')+'</div></div>'
-                +'<div class="ss-price">'+esc(p.price_range||'')+'</div></div>';
-        }).join('');
-        html+='<div class="search-suggestion-item ss-all" data-act="all"><i class="fas fa-arrow-right"></i> See all results for &ldquo;'+esc(raw)+'&rdquo;</div>';
-        box.innerHTML=html;box.classList.add('show');
-    }
-    window.handleSearch=render;
-
-    /* remember searches */
-    var _perform=window.performSearch,_select=window.selectSearch;
-    window.performSearch=function(){var v=input.value.trim();_perform();if(v)saveRecent(v);closeSug();setTools()};
-    window.selectSearch=function(id){
-        var p=products.find(function(x){return String(x.id)===String(id)});
-        _select(id);if(p)saveRecent(p.name);closeSug();setTools();
-    };
-
-    /* clicks inside the dropdown */
-    box.addEventListener('click',function(e){
-        var el=e.target.closest('[data-act]');
-        if(!el)return;
-        var act=el.getAttribute('data-act');
-        if(act==='product'){window.selectSearch(el.getAttribute('data-id'))}
-        else if(act==='recent'){input.value=el.getAttribute('data-q');window.performSearch()}
-        else if(act==='all'){window.performSearch()}
-        else if(act==='cat'){input.value='';setTools();closeSug();filterCategory(el.getAttribute('data-cat'))}
-        else if(act==='clear-recent'){clearRecent();render()}
-    });
-
-    /* keyboard: up / down / enter */
-    function items(){return Array.prototype.slice.call(box.querySelectorAll('.search-suggestion-item[data-act]'))}
-    function setActive(i){
-        var it=items();if(!it.length)return;
-        it.forEach(function(x){x.classList.remove('active')});
-        activeIdx=(i+it.length)%it.length;
-        it[activeIdx].classList.add('active');
-        it[activeIdx].scrollIntoView({block:'nearest'});
-    }
-    input.addEventListener('keydown',function(e){
-        var open=box.classList.contains('show');
-        if(e.key==='ArrowDown'){e.preventDefault();if(!open)render();setActive(activeIdx+1)}
-        else if(e.key==='ArrowUp'&&open){e.preventDefault();setActive(activeIdx-1)}
-        else if(e.key==='Enter'){
-            var it=items()[activeIdx];
-            if(open&&it){e.preventDefault();e.stopImmediatePropagation();it.click()}
-            else if(input.value.trim()){e.preventDefault();e.stopImmediatePropagation();window.performSearch()}
-        }
-    },true);
-    input.addEventListener('input',setTools);
-
-    /* clear button */
-    if(clearBtn)clearBtn.addEventListener('click',function(){
-        input.value='';setTools();input.focus();
-        if(typeof searchState!=='undefined'&&searchState)applyFilters();
-        render();
-    });
-
-    /* voice search (only shown where the browser supports it) */
-    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-    if(voiceBtn&&SR){
-        voiceBtn.classList.add('show');
-        var rec=null;
-        voiceBtn.addEventListener('click',function(){
-            if(rec){try{rec.stop()}catch(e){}return}
-            try{
-                rec=new SR();rec.lang='en-IN';rec.interimResults=false;rec.maxAlternatives=1;
-                voiceBtn.classList.add('listening');
-                rec.onresult=function(ev){
-                    var t=ev.results&&ev.results[0]&&ev.results[0][0]?ev.results[0][0].transcript:'';
-                    if(t){input.value=t;setTools();window.performSearch()}
-                };
-                rec.onerror=rec.onend=function(){voiceBtn.classList.remove('listening');rec=null};
-                rec.start();
-            }catch(err){voiceBtn.classList.remove('listening');rec=null}
-        });
-    }
-
-    /* rotating placeholder hints while the box is idle */
-    var hints=['Search products, brands, categories\u2026','Try \u201cwatches\u201d','Try \u201cmens shoes\u201d','Try \u201cmobiles\u201d','Try \u201cbeauty\u201d'],hi=0;
-    setInterval(function(){
-        if(document.activeElement===input||input.value)return;
-        hi=(hi+1)%hints.length;input.setAttribute('placeholder',hints[hi]);
-    },3500);
-    setTools();
-})();
-</script>
 <script>
 /* ===== Infinite-loop sliders: Coupon Codes + All Products =====
    Content is cloned before/after so the row never ends. Phones: swipe. Laptop: arrow buttons (+ trackpad/drag). */
@@ -3929,9 +3920,9 @@ function close404() {
         function rebuild(){
             scheduled=false;building=true;loopOn=false;
             strip();
-            var orig=Array.prototype.slice.call(g.children).filter(function(c){return c.matches(itemSel)});
+            var orig=Array.prototype.slice.call(g.children).filter(function(c){return c.matches(itemSel)&&!c.hasAttribute('data-cf')&&!c.hasAttribute('hidden')});
             var sg=sig(orig),target=0;
-            if(orig.length&&g.clientWidth>0&&g.scrollWidth-g.clientWidth>4){
+            if(orig.length&&g.clientWidth>0&&!g.hasAttribute('data-noloop')&&g.scrollWidth-g.clientWidth>4){
                 var R=rows(),padN=(R-orig.length%R)%R,i;
                 for(i=0;i<padN;i++)g.appendChild(pad());
                 g.insertBefore(cloneSet(orig,padN),g.firstChild);
@@ -3971,10 +3962,12 @@ function close404() {
             },120);
         },{passive:true});
         schedule();
+        return {schedule:schedule};
     }
-    makeLoop(document.getElementById('couponsGrid'),'.coupon-card-v2');
-    makeLoop(document.getElementById('productsGrid'),'.product-card');
-    makeLoop(document.getElementById('trendingGrid'),'.trending-card');
+    window.mtLoops={};
+    window.mtLoops.coupons=makeLoop(document.getElementById('couponsGrid'),'.coupon-card-v2');
+    window.mtLoops.products=makeLoop(document.getElementById('productsGrid'),'.product-card');
+    window.mtLoops.trending=makeLoop(document.getElementById('trendingGrid'),'.trending-card');
 
     /* product image dots: work on the card that was tapped (clones have no ids) */
     window.switchImg=function(pid,idx,dot){
@@ -4026,28 +4019,718 @@ function close404() {
     setTimeout(function(){arr.forEach(function(el){if(el.classList.contains('reveal')&&!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)el.classList.add('in')}})},2500);
 })();
 </script>
+
 <script>
-/* Fit grid: if every product fits on one screen (phone 3x3, tablet 3x2, laptop 4x2), lay them out row by row
-   so the columns are filled evenly; only bigger lists use the swipe / arrow slider. */
+/* ===== PAGER + ROWS: swipe / arrows everywhere it makes sense, never an empty gap =====
+   - rows are chosen so the number of rows divides the number of products exactly (no half-empty last column)
+   - 3 columns on phones: the slider always has something to swipe unless everything fits in one row
+   - up to sliderMax items: endless loop. Above that: finite slider, 24 more at a time with "Show more" / "Show all" */
 (function(){
-    var g=document.getElementById('productsGrid');
+    var CFG={
+        productsGrid:{sel:'.product-card',sliderMax:36,page:24,label:'products',
+            cols:function(w,g){var v=parseInt(getComputedStyle(g).getPropertyValue('--cols'),10);return v>0?v:3},rows:function(w){return w<=600?3:2}},
+        couponsGrid:{sel:'.coupon-card-v2',sliderMax:48,page:24,label:'coupon codes',
+            cols:function(w){return w<=600?1:(w<992?2:3)},rows:function(w){return w<=600?3:2}}
+    };
+    window.mtPager={};
+    function setup(id){
+        var cfg=CFG[id],g=document.getElementById(id);
+        if(!g)return;
+        var wrap=g.closest('.hs-wrap')||g;
+        var bar=document.createElement('div');
+        bar.className='mt-pager';bar.hidden=true;
+        bar.innerHTML='<div class="mt-pager-info"></div><div class="mt-pager-btns"><button type="button" class="mt-more"></button><button type="button" class="mt-all"></button></div>';
+        wrap.parentNode.insertBefore(bar,wrap.nextSibling);
+        var info=bar.querySelector('.mt-pager-info'),more=bar.querySelector('.mt-more'),all=bar.querySelector('.mt-all');
+        var shown=cfg.page,lastSig='',lastState='';
+        function items(){return Array.prototype.filter.call(g.children,function(c){return c.matches(cfg.sel)&&!c.hasAttribute('data-lp')&&!c.hasAttribute('data-cf')})}
+        function sig(a){return a.length+'|'+a.slice(0,3).concat(a.slice(-1)).map(function(x){return (x.textContent||'').replace(/\s+/g,' ').trim().slice(0,30)}).join('|')}
+        function apply(){
+            var it=items(),n=it.length,w=window.innerWidth,sg=sig(it);
+            if(sg!==lastSig){shown=cfg.page;lastSig=sg}
+            var big=n>cfg.sliderMax;
+            var visible=big?Math.min(shown,n):n;
+            var cols=cfg.cols(w,g),pref=cfg.rows(w);
+            /* best row count: divides the visible items exactly AND leaves more columns than fit on screen (=> something to swipe) */
+            var R=0,r;
+            for(r=pref;r>=1;r--){if(visible%r===0&&visible/r>cols){R=r;break}}
+            var fit=(R===0);              /* everything fits on one screen: plain grid, row by row */
+            if(fit)R=1;
+            g.classList.toggle('fit-grid',fit);
+            g.style.setProperty('--rows',R);
+            if(big)g.setAttribute('data-noloop','');else g.removeAttribute('data-noloop');
+            if(fit||big)Array.prototype.forEach.call(g.querySelectorAll('[data-lp]'),function(x){x.remove()});
+            it.forEach(function(el,i){if(big&&i>=shown)el.setAttribute('hidden','');else el.removeAttribute('hidden')});
+            if(big&&n>shown){
+                bar.hidden=false;
+                info.textContent='Showing '+shown+' of '+n+' '+cfg.label+' \u2013 swipe sideways, then load more';
+                more.textContent='Show '+Math.min(cfg.page,n-shown)+' more';
+                all.textContent='Show all '+n;
+            }else bar.hidden=true;
+            var state=[fit,R,big,visible,cols].join('|');
+            if(state!==lastState){
+                lastState=state;
+                var lp=window.mtLoops&&window.mtLoops[id==='productsGrid'?'products':'coupons'];
+                if(lp)lp.schedule();
+            }
+        }
+        more.addEventListener('click',function(){shown+=cfg.page;apply()});
+        all.addEventListener('click',function(){shown=1e9;apply()});
+        var t=null;
+        function soon(){cancelAnimationFrame(t);t=requestAnimationFrame(apply)}
+        if(window.MutationObserver)new MutationObserver(apply).observe(g,{childList:true});
+        window.addEventListener('resize',soon);
+        window.addEventListener('load',apply);
+        window.mtPager[id]={apply:apply};
+        apply();
+    }
+    setup('productsGrid');
+    setup('couponsGrid');
+})();
+</script>
+<script>
+/* ===== COUPON SEARCH FILTER: used by the search bar to show matching coupon codes ===== */
+(function(){
+    var g=document.getElementById('couponsGrid');
     if(!g)return;
-    function capacity(){
-        var w=window.innerWidth;
-        if(w<=600)return 9;
-        if(w<992)return 6;
-        return 8;
+    var GENERIC=['coupon','coupons','code','codes','promo','offer','offers','discount','voucher','vouchers'];
+    function norm(v){return String(v||'').toLowerCase().replace(/['\u2019`]/g,'')}
+    function nonGeneric(q){return norm(q).split(/\s+/).filter(Boolean).filter(function(t){return GENERIC.indexOf(t)<0})}
+    window.mtCouponMatchData=function(c,q){
+        if(!norm(q).trim())return false;
+        var ng=nonGeneric(q);
+        if(!ng.length)return true;
+        var hay=norm((c.company||'')+' '+(c.offer||'')+' '+(c.code||''));
+        return ng.every(function(t){return hay.indexOf(t)>-1});
+    };
+    var active=null;
+    var bar=document.createElement('div');
+    bar.id='couponFilterBar';bar.className='coupon-filter-bar';bar.hidden=true;
+    var wrap=g.closest('.hs-wrap')||g;
+    wrap.parentNode.insertBefore(bar,wrap);
+    function esc(v){return escapeHtml(String(v==null?'':v))}
+    function setAttrs(){
+        var cards=Array.prototype.filter.call(g.children,function(c){return c.classList.contains('coupon-card-v2')&&!c.hasAttribute('data-lp')});
+        if(!active){cards.forEach(function(c){c.removeAttribute('data-cf')});bar.hidden=true;return}
+        var ng=nonGeneric(active),visible=0;
+        cards.forEach(function(c){
+            var ok=!ng.length||ng.every(function(t){return norm(c.textContent).indexOf(t)>-1});
+            if(ok){c.removeAttribute('data-cf');visible++}else c.setAttribute('data-cf','1');
+        });
+        bar.hidden=false;
+        bar.innerHTML='<span><i class="fas fa-ticket-alt"></i> Showing <b>'+visible+'</b> coupon code'+(visible===1?'':'s')+' for &ldquo;'+esc(active)+'&rdquo;</span><button type="button" onclick="mtClearCouponFilter()">Show all coupons</button>';
     }
     function apply(){
-        var n=g.querySelectorAll('.product-card:not([data-lp])').length;
-        var fit=n<=capacity();
-        g.classList.toggle('fit-grid',fit);
-        if(fit)Array.prototype.forEach.call(g.querySelectorAll('[data-lp]'),function(x){x.remove()});
+        setAttrs();
+        if(window.mtPager&&window.mtPager.couponsGrid)window.mtPager.couponsGrid.apply();
+        if(window.mtLoops&&window.mtLoops.coupons)window.mtLoops.coupons.schedule();
     }
-    if(window.MutationObserver)new MutationObserver(apply).observe(g,{childList:true});
-    window.addEventListener('resize',apply);
-    window.addEventListener('load',apply);
-    apply();
+    window.mtShowCoupons=function(q){
+        active=String(q||'').trim()||null;
+        apply();
+        var sec=document.getElementById('couponsSection');
+        if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+    window.mtClearCouponFilter=function(){active=null;apply()};
+    if(window.MutationObserver)new MutationObserver(function(){
+        if(!active)return;
+        setAttrs();
+        if(window.mtPager&&window.mtPager.couponsGrid)window.mtPager.couponsGrid.apply();
+    }).observe(g,{childList:true});
+})();
+</script>
+<script>
+/* ===== DATA: load every product / coupon (not just the first 1000), custom categories, bulk upload in batches ===== */
+(function(){
+    var PAGE=1000;
+    async function restPage(table,orderQs,offset){
+        var url=SUPABASE_URL+'/rest/v1/'+table+'?select=*&'+orderQs+'&limit='+PAGE+'&offset='+offset;
+        var r=await fetch(url,{headers:{apikey:SUPABASE_ANON_KEY,Authorization:'Bearer '+SUPABASE_ANON_KEY,Accept:'application/json'}});
+        if(!r.ok)throw new Error('HTTP '+r.status);
+        return r.json();
+    }
+    async function more(res,table,orderQs){
+        if(!res||res.error||!Array.isArray(res.data)||res.data.length<500)return;
+        var acc=res.data.slice(),seen={},i,k;
+        acc.forEach(function(x){seen[x.id]=1});
+        for(i=0;i<80;i++){
+            var page=await restPage(table,orderQs,acc.length);
+            if(!page.length)break;
+            var added=0;
+            for(k=0;k<page.length;k++){if(!seen[page[k].id]){seen[page[k].id]=1;acc.push(page[k]);added++}}
+            if(!added)break;
+        }
+        res.data=acc;
+    }
+    var _load=window.loadPublicTables;
+    window.loadPublicTables=async function(){
+        var r=await _load.apply(this,arguments);
+        try{await Promise.all([more(r[0],'products','order=id.desc'),more(r[2],'coupons','order=sort_order.asc&order=id.desc')])}
+        catch(e){console.warn('Extra pages failed:',e)}
+        try{readCustomCategories(r[4]&&r[4].data)}catch(e){console.warn(e)}
+        return r;
+    };
+
+    /* ---------- custom categories (stored in site_settings -> custom_categories) ---------- */
+    window.mtCustomCats=[];
+    var applied={};
+    function readCustomCategories(settings){
+        var row=(settings||[]).find(function(x){return x.key==='custom_categories'});
+        var list=[];
+        try{list=JSON.parse((row&&row.value)||'[]')}catch(e){list=[]}
+        if(!Array.isArray(list))list=[];
+        window.mtCustomCats=list.filter(function(c){return c&&/^[a-z0-9-]{1,40}$/.test(c.key)&&typeof c.name==='string'&&c.name.trim()}).map(function(c){return {key:c.key,name:c.name.trim().slice(0,40)}});
+        applyCustomCategories();
+    }
+    function addOption(sel,c){
+        if(!sel||sel.querySelector('option[value="'+c.key+'"]'))return;
+        var o=document.createElement('option');o.value=c.key;o.textContent=c.name;o.setAttribute('data-custom','1');sel.appendChild(o);
+    }
+    function applyCustomCategories(){
+        var list=window.mtCustomCats||[],keys={};
+        list.forEach(function(c){keys[c.key]=1;catNames[c.key]=c.name;applied[c.key]=1});
+        Object.keys(applied).forEach(function(k){if(!keys[k]){delete catNames[k];delete applied[k]}});
+        ['categoryFilter','prodCategory','editCategory'].forEach(function(id){
+            var sel=document.getElementById(id);
+            if(!sel)return;
+            Array.prototype.slice.call(sel.querySelectorAll('option[data-custom]')).forEach(function(o){if(!keys[o.value])o.remove()});
+            list.forEach(function(c){addOption(sel,c)});
+        });
+        if(window.mtNavRefresh){
+            window.mtNavRefresh(function(el){
+                Array.prototype.slice.call(el.querySelectorAll('.nav-item[data-custom]')).forEach(function(n){if(!keys[n.getAttribute('data-cat')])n.remove()});
+                list.forEach(function(c){
+                    if(el.querySelector('.nav-item[data-cat="'+c.key+'"]'))return;
+                    var a=document.createElement('a');
+                    a.className='nav-item';a.setAttribute('data-custom','1');a.setAttribute('data-cat',c.key);
+                    a.setAttribute('onclick',"filterCategory('"+c.key+"')");
+                    a.innerHTML='<i class="fas fa-tag"></i> ';
+                    a.appendChild(document.createTextNode(c.name));
+                    el.appendChild(a);
+                });
+            });
+        }
+    }
+    window.applyCustomCategories=applyCustomCategories;
+    async function saveCustomCategories(list){
+        return _supabase.from('site_settings').upsert({key:'custom_categories',value:JSON.stringify(list)});
+    }
+    function slug(n){return String(n).toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)}
+    window.renderAdminCategories=function(){
+        var box=document.getElementById('adminCategoriesList');
+        if(!box)return;
+        var list=window.mtCustomCats||[];
+        var cnt=document.getElementById('catAdminCount');if(cnt)cnt.textContent=list.length;
+        var built=Object.keys(catNames).filter(function(k){return !applied[k]}).map(function(k){return '<span class="admin-cat-chip">'+escapeHtml(catNames[k])+'</span>'}).join('');
+        box.innerHTML=(list.length?list.map(function(c){
+            var used=products.filter(function(p){return p.category===c.key}).length;
+            return '<div class="admin-cat-row"><div><strong>'+escapeHtml(c.name)+'</strong> <span style="color:var(--gray);font-size:12px">('+used+' products)</span></div><button class="btn-delete" onclick="deleteCustomCategory(\''+c.key+'\')"><i class="fas fa-trash"></i></button></div>';
+        }).join(''):'<p style="color:var(--gray);padding:6px 0 12px">No custom categories yet.</p>')
+        +'<h4 style="margin:14px 0 6px">Built-in categories</h4><div>'+built+'</div>';
+    };
+    window.addCustomCategory=async function(){
+        var inp=document.getElementById('newCatName');
+        var name=(inp.value||'').trim().replace(/\s+/g,' ');
+        if(name.length<2){showToast('Enter a category name','error');return}
+        var key=slug(name);
+        if(!key){showToast('Use letters or numbers in the name','error');return}
+        if(catNames[key]||Object.keys(catNames).some(function(k){return String(catNames[k]).toLowerCase()===name.toLowerCase()})){showToast('That category already exists','error');return}
+        if(!backendReady())return;
+        var next=(window.mtCustomCats||[]).concat([{key:key,name:name.slice(0,40)}]);
+        var res=await saveCustomCategories(next);
+        if(res.error){showToast('Could not save category: '+res.error.message,'error');return}
+        window.mtCustomCats=next;inp.value='';
+        applyCustomCategories();window.renderAdminCategories();
+        showToast('Category "'+name+'" added','success');
+    };
+    window.deleteCustomCategory=async function(key){
+        var used=products.filter(function(p){return p.category===key}).length;
+        if(used){showToast('Move or delete the '+used+' product(s) in this category first','error');return}
+        if(!confirm('Delete this category?'))return;
+        if(!backendReady())return;
+        var next=(window.mtCustomCats||[]).filter(function(c){return c.key!==key});
+        var res=await saveCustomCategories(next);
+        if(res.error){showToast('Could not delete: '+res.error.message,'error');return}
+        window.mtCustomCats=next;
+        applyCustomCategories();window.renderAdminCategories();
+        showToast('Category deleted','success');
+    };
+
+    /* ---------- admin panel extras (added after the admin UI is created) ---------- */
+    function injectAdminExtras(){
+        var tabs=document.querySelector('.admin-tabs');
+        if(!tabs)return;
+        if(!document.getElementById('tab-categories')){
+            var btn=document.createElement('button');
+            btn.className='admin-tab';btn.setAttribute('onclick',"switchAdminTab(this,'categories')");btn.textContent='\uD83C\uDFF7\uFE0F Categories';
+            var bulkBtn=Array.prototype.find.call(tabs.children,function(b){return (b.getAttribute('onclick')||'').indexOf("'bulk'")>-1});
+            tabs.insertBefore(btn,bulkBtn?bulkBtn.nextSibling:null);
+            var host=document.getElementById('tab-bulk');
+            var div=document.createElement('div');
+            div.className='admin-tab-content';div.id='tab-categories';
+            div.innerHTML='<div class="admin-form-card"><h3>\uD83C\uDFF7\uFE0F Add Category</h3><p style="color:var(--gray);margin-bottom:16px;font-size:14px;">New categories appear in the category bar, the filter list and the product forms.</p><div class="form-group"><label>Category Name *</label><input type="text" id="newCatName" maxlength="40" placeholder="e.g. Grocery"></div><button class="btn-primary" onclick="addCustomCategory()"><i class="fas fa-plus-circle"></i> Add Category</button></div><div class="admin-form-card"><h3>Categories (<span id="catAdminCount">0</span> custom)</h3><div id="adminCategoriesList"></div></div>';
+            if(host)host.parentNode.insertBefore(div,host.nextSibling);
+        }
+        var ct=document.getElementById('tab-coupons');
+        if(ct&&!document.getElementById('couponBulkFile')){
+            var card=document.createElement('div');
+            card.className='admin-form-card';
+            card.innerHTML='<h3>\uD83D\uDCE4 Bulk Import Coupons (JSON)</h3><p style="color:var(--gray);margin-bottom:14px;font-size:14px;">Import hundreds of coupons at once (uploaded in batches of 100).</p><div class="bulk-upload-area" style="padding:30px" onclick="document.getElementById(\'couponBulkFile\').click()"><i class="fas fa-cloud-upload-alt"></i><h4>Click to upload coupons JSON</h4><input type="file" id="couponBulkFile" accept=".json" style="display:none;" onchange="bulkImportCoupons(event)"></div><pre style="background:#f9fafb;border:1px solid #e5e7eb;padding:12px;border-radius:8px;font-size:12px;overflow-x:auto;margin-top:14px;">[\n  { "company": "Amazon", "code": "SAVE20", "offer": "20% off", "logo": "https://logo.png", "status": "active" }\n]</pre>';
+            ct.insertBefore(card,ct.children[1]||null);
+        }
+        var bt=document.getElementById('tab-bulk');
+        if(bt){var p=bt.querySelector('p');if(p&&p.textContent.indexOf('1,000')<0)p.textContent='Upload a JSON file containing product data. Large files (1,000+ products) are uploaded in batches of 100.'}
+        applyCustomCategories();
+    }
+    var _ensure=window.ensureAdminUI;
+    window.ensureAdminUI=function(){_ensure.apply(this,arguments);injectAdminExtras()};
+    var _sw=window.switchAdminTab;
+    window.switchAdminTab=function(el,tab){_sw.apply(this,arguments);if(tab==='categories')window.renderAdminCategories()};
+    var _rap=window.renderAdminProducts;
+    window.renderAdminProducts=function(){
+        _rap.apply(this,arguments);
+        var b=document.getElementById('adminProductsBody');
+        if(b)Array.prototype.forEach.call(b.querySelectorAll('img'),function(i){i.loading='lazy';i.decoding='async'});
+    };
+
+    /* ---------- bulk upload: batches of 100 ---------- */
+    window.bulkUpload=async function(e){
+        var file=e.target.files[0];
+        if(!file)return;
+        if(!backendReady()){e.target.value='';return}
+        var reader=new FileReader();
+        reader.onload=async function(ev){
+            try{
+                var data=JSON.parse(ev.target.result);
+                if(!Array.isArray(data)){showToast('Format error: JSON must be an array of products','error');return}
+                var valid=data.filter(function(item){return item&&item.name&&catNames[item.category]});
+                var skipped=data.length-valid.length;
+                if(!valid.length){showToast('No valid products found (each needs a name and a valid category)','error');return}
+                var payload=valid.map(function(item){
+                    var aff=item.affiliateUrl||'#';
+                    var imgs=Array.isArray(item.images)&&item.images.length
+                        ?item.images.map(function(i){return typeof i==='string'?{url:i,affiliateUrl:aff}:i}).filter(function(i){return i&&i.url})
+                        :[];
+                    return {
+                        name:String(item.name),
+                        category:item.category,
+                        price_range:item.priceRange||'Price not available',
+                        badge:allowedBadges.indexOf(item.badge)>-1?item.badge:'',
+                        affiliate_url:aff,
+                        images:imgs.length?imgs:[{url:placeholderImage}]
+                    };
+                });
+                showToast('Uploading '+payload.length+' products in batches\u2026','info');
+                var done=0,CH=100,i;
+                for(i=0;i<payload.length;i+=CH){
+                    var part=payload.slice(i,i+CH);
+                    var res=await _supabase.from('products').insert(part);
+                    if(res.error)throw new Error('batch '+(i/CH+1)+' failed ('+done+' already saved): '+res.error.message);
+                    done+=part.length;
+                    if(payload.length>CH)showToast('Uploaded '+done+' / '+payload.length,'info');
+                }
+                showToast('Bulk upload finished! Imported '+done+' products'+(skipped?', skipped '+skipped+' invalid':'')+'.','success');
+                await syncFromSupabase();
+            }catch(err){
+                showToast('Upload problem: '+err.message,'error');
+                try{await syncFromSupabase()}catch(x){}
+            }
+            e.target.value='';
+        };
+        reader.readAsText(file);
+    };
+    window.bulkImportCoupons=function(e){
+        var file=e.target.files[0];
+        if(!file)return;
+        if(!backendReady()){e.target.value='';return}
+        var reader=new FileReader();
+        reader.onload=async function(ev){
+            try{
+                var data=JSON.parse(ev.target.result);
+                if(!Array.isArray(data)){showToast('Format error: JSON must be an array of coupons','error');return}
+                var valid=data.filter(function(c){return c&&c.company&&c.code&&c.offer}).map(function(c){
+                    return {company:String(c.company).trim(),code:String(c.code).trim(),offer:String(c.offer).trim(),logo:c.logo?String(c.logo).trim():'',status:c.status==='inactive'?'inactive':'active'};
+                });
+                var skipped=data.length-valid.length;
+                if(!valid.length){showToast('No valid coupons found (each needs company, code and offer)','error');return}
+                showToast('Uploading '+valid.length+' coupons\u2026','info');
+                var done=0,CH=100,i;
+                for(i=0;i<valid.length;i+=CH){
+                    var part=valid.slice(i,i+CH);
+                    var res=await _supabase.from('coupons').insert(part);
+                    if(res.error)throw new Error('batch '+(i/CH+1)+' failed ('+done+' already saved): '+res.error.message);
+                    done+=part.length;
+                }
+                showToast('Imported '+done+' coupons'+(skipped?', skipped '+skipped+' invalid':'')+'.','success');
+                await syncFromSupabase();
+            }catch(err){
+                showToast('Upload problem: '+err.message,'error');
+                try{await syncFromSupabase()}catch(x){}
+            }
+            e.target.value='';
+        };
+        reader.readAsText(file);
+    };
+})();
+</script>
+<script>
+/* ===== About MyTrendly (Support section) ===== */
+legalPages.about={title:'About MyTrendly',content:`<h2>What is MyTrendly?</h2>
+<p>MyTrendly is an India-focused deal-discovery website. We bring product deals, coupon codes and shopping news from popular online stores &mdash; such as Amazon, Flipkart, Myntra, Meesho and Croma &mdash; together in one place, so you can find a good offer in a few taps and then buy on the store you trust.</p>
+<h2>What problem does it solve?</h2>
+<ul><li><strong>Too many places to check:</strong> instead of opening many shopping apps and websites, you can browse deals from many stores on one page.</li>
+<li><strong>Hard to find working coupon codes:</strong> coupon codes are collected in one section with a one-tap copy button.</li>
+<li><strong>Hard to compare:</strong> products are grouped into clear categories and can be searched, filtered and saved to your wishlist.</li>
+<li><strong>Time:</strong> we do the searching so you can spend less time hunting for offers.</li></ul>
+<h2>How do affiliate commissions work?</h2>
+<p>MyTrendly is free to use. When you click a &ldquo;Check Deal&rdquo; button and then buy something on the store's website, the store may pay us a small commission. This is called an affiliate commission.</p>
+<ul><li>You pay the <strong>same price</strong> as you would without our link &mdash; the commission is paid by the store, not by you.</li>
+<li>The commission helps us keep the website running and free.</li>
+<li>We do not sell products, take payments, ship orders or handle returns &mdash; the store you buy from does.</li></ul>
+<p>Read the full <a href="#" onclick="event.preventDefault();openLegalPage('affiliate')">Affiliate Disclosure</a>.</p>
+<h2>How often is the information updated?</h2>
+<p>We aim to add new deals and coupon codes regularly and to remove or deactivate offers that have ended. Prices, stock and coupon validity are controlled by the stores and can change at any moment, so please always check the final price and the coupon terms on the store's website before you buy.</p>
+<h2>How can you report incorrect information?</h2>
+<p>If you find a wrong price, a broken link, an expired coupon or any other mistake:</p>
+<ol><li>Open the <a href="#" onclick="event.preventDefault();openLegalPage('contact');setTimeout(function(){var s=document.getElementById('contactCategory');if(s)s.value='Product Information'},0)">Contact Us form</a>.</li>
+<li>Choose <em>Product Information</em> or <em>Broken Link</em> as the category.</li>
+<li>Tell us the product or coupon name and what is wrong (a screenshot link helps).</li></ol>
+<p>We review every report and correct or remove the item as soon as we can.</p>
+<h2>Contact details</h2>
+<p>📧 Email: <a href="mailto:mytrendlydeals@gmail.com">mytrendlydeals@gmail.com</a></p>
+<p>💬 WhatsApp: <a href="https://chat.whatsapp.com/IRfucWf0TXb6C5QFLRXtcX" target="_blank" rel="noopener noreferrer">Join our community</a></p>
+<p>📸 Instagram: <a href="https://www.instagram.com/mytrendly_" target="_blank" rel="noopener noreferrer">@mytrendly_</a></p>
+<p>📍 India</p>`};
+</script>
+<script>
+/* ===== ADVANCED SEARCH: products + coupon codes, highlighted suggestions, recent searches, category chips,
+   keyboard navigation, voice search (mic), clear button, multi-word matching ===== */
+(function(){
+    var input=document.getElementById('searchInput');
+    var box=document.getElementById('searchSuggestions');
+    var clearBtn=document.getElementById('searchClearBtn');
+    var voiceBtn=document.getElementById('searchVoiceBtn');
+    if(!input||!box)return;
+    var KEY='mt_recent_searches',activeIdx=-1;
+
+    function getRecent(){try{var a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a.slice(0,6):[]}catch(e){return[]}}
+    function saveRecent(q){
+        q=String(q||'').trim();if(q.length<2)return;
+        try{var a=getRecent().filter(function(x){return x.toLowerCase()!==q.toLowerCase()});a.unshift(q);localStorage.setItem(KEY,JSON.stringify(a.slice(0,6)))}catch(e){}
+    }
+    function clearRecent(){try{localStorage.removeItem(KEY)}catch(e){}}
+    function esc(v){return escapeHtml(String(v==null?'':v))}
+    function norm(v){return String(v||'').toLowerCase().replace(/['\u2019`]/g,'')}
+
+    window.matchesQuery=function(p,q){
+        var hay=norm((p.name||'')+' '+(p.category||'')+' '+(catNames[p.category]||'')+' '+(p.price_range||'')+' '+(p.badge||''));
+        var toks=norm(q).split(/\s+/).filter(Boolean);
+        return toks.length>0&&toks.every(function(t){return hay.indexOf(t)>-1});
+    };
+    function couponHits(q){
+        var list=(typeof siteCoupons!=='undefined'&&Array.isArray(siteCoupons))?siteCoupons:[];
+        return list.filter(function(c){return c.status==='active'&&window.mtCouponMatchData&&window.mtCouponMatchData(c,q)});
+    }
+
+    function highlight(text,toks){
+        var t=String(text||'');
+        if(!toks.length)return esc(t);
+        var re=new RegExp('('+toks.map(function(x){return x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','ig');
+        return t.split(re).map(function(part,i){return i%2?'<mark>'+esc(part)+'</mark>':esc(part)}).join('');
+    }
+    function head(label,btnLabel,act){
+        return '<div class="ss-head"><span>'+esc(label)+'</span>'+(btnLabel?'<button type="button" data-act="'+act+'">'+esc(btnLabel)+'</button>':'')+'</div>';
+    }
+    var POPULAR=['electronics','mobiles','fashion','beauty','home','gaming','computers','health'];
+    function chips(list,withCoupons){
+        var h=list.map(function(c){return '<button type="button" class="ss-chip" data-act="cat" data-cat="'+esc(c)+'">'+esc(catNames[c]||c)+'</button>'}).join('');
+        if(withCoupons)h='<button type="button" class="ss-chip" data-act="coupons-all" data-q="coupons">\uD83C\uDF9F\uFE0F Coupon codes</button>'+h;
+        return '<div class="ss-chips">'+h+'</div>';
+    }
+    function setTools(){
+        var has=input.value.trim().length>0;
+        if(clearBtn)clearBtn.classList.toggle('show',has);
+    }
+    function closeSug(){box.classList.remove('show');activeIdx=-1}
+
+    function render(){
+        setTools();
+        var raw=input.value.trim(),q=raw.toLowerCase(),html='';
+        activeIdx=-1;
+        if(q.length<2){
+            var rec=getRecent();
+            if(rec.length){
+                html+=head('Recent searches','Clear','clear-recent');
+                html+=rec.map(function(r){return '<div class="search-suggestion-item" data-act="recent" data-q="'+esc(r)+'"><span class="ss-ico"><i class="fas fa-history"></i></span><div class="ss-main"><div class="ss-name">'+esc(r)+'</div></div></div>'}).join('');
+            }
+            html+=head('Popular')+chips(POPULAR,true);
+            box.innerHTML=html;box.classList.add('show');return;
+        }
+        var toks=norm(q).split(/\s+/).filter(Boolean);
+        var list=products.filter(function(p){return window.matchesQuery(p,q)}).map(function(p){
+            var n=norm(p.name);
+            var sc=n.indexOf(norm(q))===0?0:(n.split(/\s+/).some(function(w){return w.indexOf(toks[0])===0})?1:2);
+            return {p:p,sc:sc};
+        }).sort(function(a,b){return a.sc-b.sc});
+        var total=list.length,cHits=couponHits(q);
+        if(!total&&!cHits.length){
+            html+='<div class="ss-empty"><i class="fas fa-search" style="font-size:22px;display:block;margin-bottom:8px;opacity:.5"></i>No products or coupons found for &ldquo;'+esc(raw)+'&rdquo;</div>'+head('Try a category')+chips(POPULAR,true);
+            box.innerHTML=html;box.classList.add('show');return;
+        }
+        if(total){
+            html+=head(total+' product'+(total>1?'s':'')+' found');
+            html+=list.slice(0,5).map(function(o){
+                var p=o.p,imgs=Array.isArray(p.images)&&p.images.length?p.images:[{url:placeholderImage}];
+                var src=esc(safeImg(imgUrl(imgs[0])));
+                return '<div class="search-suggestion-item" data-act="product" data-id="'+Number(p.id)+'">'
+                    +'<img class="ss-thumb" src="'+src+'" alt="" loading="lazy" onerror="imgFallback(this)">'
+                    +'<div class="ss-main"><div class="ss-name">'+highlight(p.name,toks)+'</div><div class="ss-sub">'+esc(catNames[p.category]||p.category||'')+'</div></div>'
+                    +'<div class="ss-price">'+esc(p.price_range||'')+'</div></div>';
+            }).join('');
+            html+='<div class="search-suggestion-item ss-all" data-act="all"><i class="fas fa-arrow-right"></i> See all results for &ldquo;'+esc(raw)+'&rdquo;</div>';
+        }
+        if(cHits.length){
+            html+=head(cHits.length+' coupon code'+(cHits.length>1?'s':'')+' found');
+            html+=cHits.slice(0,3).map(function(c){
+                return '<div class="search-suggestion-item" data-act="coupon" data-q="'+esc(c.code)+'">'
+                    +'<span class="ss-ico"><i class="fas fa-ticket-alt"></i></span>'
+                    +'<div class="ss-main"><div class="ss-name">'+highlight(c.company,toks)+'</div><div class="ss-sub">'+highlight(c.offer,toks)+'</div></div>'
+                    +'<div class="ss-price">'+highlight(c.code,toks)+'</div></div>';
+            }).join('');
+            html+='<div class="search-suggestion-item ss-all" data-act="coupons-all" data-q="'+esc(raw)+'"><i class="fas fa-ticket-alt"></i> View '+(cHits.length>1?'all '+cHits.length+' matching coupons':'this coupon')+'</div>';
+        }
+        box.innerHTML=html;box.classList.add('show');
+    }
+    window.handleSearch=render;
+
+    var _perform=window.performSearch,_select=window.selectSearch;
+    window.performSearch=function(){
+        var v=input.value.trim();
+        var pHits=v?products.filter(function(p){return window.matchesQuery(p,v)}).length:0;
+        var cHits=v?couponHits(v).length:0;
+        if(v&&pHits===0&&cHits>0){
+            saveRecent(v);closeSug();setTools();
+            if(window.mtShowCoupons)window.mtShowCoupons(v);
+            return;
+        }
+        if(window.mtClearCouponFilter)window.mtClearCouponFilter();
+        _perform();
+        if(v)saveRecent(v);
+        closeSug();setTools();
+    };
+    window.selectSearch=function(id){
+        var p=products.find(function(x){return String(x.id)===String(id)});
+        if(window.mtClearCouponFilter)window.mtClearCouponFilter();
+        _select(id);if(p)saveRecent(p.name);closeSug();setTools();
+    };
+
+    box.addEventListener('click',function(e){
+        var el=e.target.closest('[data-act]');
+        if(!el)return;
+        var act=el.getAttribute('data-act');
+        if(act==='product'){window.selectSearch(el.getAttribute('data-id'))}
+        else if(act==='recent'){input.value=el.getAttribute('data-q');window.performSearch()}
+        else if(act==='all'){window.performSearch()}
+        else if(act==='coupon'||act==='coupons-all'){
+            var q=el.getAttribute('data-q')||input.value.trim();
+            saveRecent(input.value.trim()||q);closeSug();
+            if(window.mtShowCoupons)window.mtShowCoupons(q);
+        }
+        else if(act==='cat'){input.value='';setTools();closeSug();filterCategory(el.getAttribute('data-cat'))}
+        else if(act==='clear-recent'){clearRecent();render()}
+    });
+
+    function items(){return Array.prototype.slice.call(box.querySelectorAll('.search-suggestion-item[data-act]'))}
+    function setActive(i){
+        var it=items();if(!it.length)return;
+        it.forEach(function(x){x.classList.remove('active')});
+        activeIdx=(i+it.length)%it.length;
+        it[activeIdx].classList.add('active');
+        it[activeIdx].scrollIntoView({block:'nearest'});
+    }
+    input.addEventListener('keydown',function(e){
+        var open=box.classList.contains('show');
+        if(e.key==='ArrowDown'){e.preventDefault();if(!open)render();setActive(activeIdx+1)}
+        else if(e.key==='ArrowUp'&&open){e.preventDefault();setActive(activeIdx-1)}
+        else if(e.key==='Enter'){
+            var it=items()[activeIdx];
+            if(open&&it){e.preventDefault();e.stopImmediatePropagation();it.click()}
+            else if(input.value.trim()){e.preventDefault();e.stopImmediatePropagation();window.performSearch()}
+        }
+    },true);
+    input.addEventListener('input',setTools);
+
+    if(clearBtn)clearBtn.addEventListener('click',function(){
+        input.value='';setTools();input.focus();
+        if(window.mtClearCouponFilter)window.mtClearCouponFilter();
+        if(typeof searchState!=='undefined'&&searchState)applyFilters();
+        render();
+    });
+
+    /* voice search: the mic is always visible; browsers without speech support get a friendly message */
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(voiceBtn){
+        voiceBtn.classList.add('show');
+        var rec=null;
+        voiceBtn.addEventListener('click',function(){
+            if(!SR){showToast('Voice search is not supported in this browser. Please try Chrome.','info');return}
+            if(rec){try{rec.stop()}catch(e){}return}
+            try{
+                rec=new SR();rec.lang='en-IN';rec.interimResults=false;rec.maxAlternatives=1;
+                voiceBtn.classList.add('listening');
+                showToast('Listening\u2026 speak now','info');
+                rec.onresult=function(ev){
+                    var t=ev.results&&ev.results[0]&&ev.results[0][0]?ev.results[0][0].transcript:'';
+                    if(t){input.value=t;setTools();window.performSearch()}
+                };
+                rec.onerror=function(ev){
+                    voiceBtn.classList.remove('listening');rec=null;
+                    if(ev&&(ev.error==='not-allowed'||ev.error==='service-not-allowed'))showToast('Please allow microphone access to use voice search','error');
+                };
+                rec.onend=function(){voiceBtn.classList.remove('listening');rec=null};
+                rec.start();
+            }catch(err){voiceBtn.classList.remove('listening');rec=null}
+        });
+    }
+
+    var hints=['Search products, coupons, brands\u2026','Try \u201cwatches\u201d','Try \u201camazon coupon\u201d','Try \u201cmens shoes\u201d','Try \u201cbeauty\u201d'],hi=0;
+    setInterval(function(){
+        if(document.activeElement===input||input.value)return;
+        hi=(hi+1)%hints.length;input.setAttribute('placeholder',hints[hi]);
+    },3500);
+    setTools();
+})();
+</script>
+<script>
+/* ===== ADMIN: search bars for Manage Products and Manage Coupons ===== */
+(function(){
+    var X='<svg viewBox="0 0 384 512" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';
+    function norm(v){return String(v||'').toLowerCase().replace(/['\u2019`]/g,'')}
+    var cfg={
+        prod:{inputId:'adminProdSearch',infoId:'adminProdSearchInfo',emptyId:'adminProdSearchEmpty',label:'products',
+            items:function(){var b=document.getElementById('adminProductsBody');return b?Array.prototype.slice.call(b.querySelectorAll('tr')):[]},
+            placeholder:'Search products by name, category or price\u2026'},
+        coup:{inputId:'adminCouponSearch',infoId:'adminCouponSearchInfo',emptyId:'adminCouponSearchEmpty',label:'coupons',
+            items:function(){var b=document.getElementById('adminCouponsList');return b?Array.prototype.slice.call(b.querySelectorAll('.coupon-admin-card')):[]},
+            placeholder:'Search coupons by company, code, offer or status\u2026'}
+    };
+    function filter(key){
+        var c=cfg[key],inp=document.getElementById(c.inputId);
+        if(!inp)return;
+        var toks=norm(inp.value).split(/\s+/).filter(Boolean);
+        var items=c.items(),shown=0;
+        items.forEach(function(el){
+            var ok=!toks.length||toks.every(function(t){return norm(el.textContent).indexOf(t)>-1});
+            el.style.display=ok?'':'none';
+            if(ok)shown++;
+        });
+        var info=document.getElementById(c.infoId),empty=document.getElementById(c.emptyId);
+        if(info)info.textContent=toks.length?('Showing '+shown+' of '+items.length+' '+c.label):(items.length+' '+c.label);
+        if(empty)empty.hidden=!(toks.length&&items.length&&shown===0);
+        var clr=inp.parentNode.querySelector('.admin-search-clear');
+        if(clr)clr.classList.toggle('show',inp.value.length>0);
+    }
+    function build(key,beforeEl){
+        var c=cfg[key];
+        if(document.getElementById(c.inputId)||!beforeEl)return;
+        var bar=document.createElement('div');
+        bar.className='admin-search';
+        bar.innerHTML='<div class="admin-search-box"><i class="fas fa-search"></i><input type="search" id="'+c.inputId+'" placeholder="'+c.placeholder+'" autocomplete="off" aria-label="Search '+c.label+'"><button type="button" class="admin-search-clear" aria-label="Clear search">'+X+'</button></div><span class="admin-search-info" id="'+c.infoId+'"></span>';
+        beforeEl.parentNode.insertBefore(bar,beforeEl);
+        var empty=document.createElement('div');
+        empty.className='admin-search-empty';empty.id=c.emptyId;empty.hidden=true;
+        empty.innerHTML='<i class="fas fa-search" style="opacity:.5"></i> No '+c.label+' match your search.';
+        beforeEl.parentNode.insertBefore(empty,beforeEl.nextSibling);
+        var inp=bar.querySelector('input'),t=null;
+        inp.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){filter(key)},120)});
+        inp.addEventListener('keydown',function(e){if(e.key==='Escape'){inp.value='';filter(key)}});
+        bar.querySelector('.admin-search-clear').addEventListener('click',function(){inp.value='';filter(key);inp.focus()});
+        filter(key);
+    }
+    function inject(){
+        var table=document.querySelector('#tab-manage .products-table-container');
+        build('prod',table);
+        var list=document.getElementById('adminCouponsList');
+        build('coup',list);
+    }
+    var _ens=window.ensureAdminUI;
+    window.ensureAdminUI=function(){_ens.apply(this,arguments);inject()};
+    /* keep the search active after any list refresh (add / edit / delete / sync) */
+    var _rp=window.renderAdminProducts;
+    window.renderAdminProducts=function(){_rp.apply(this,arguments);inject();filter('prod')};
+    var _rc=window.renderAdminCoupons;
+    window.renderAdminCoupons=function(){_rc.apply(this,arguments);inject();filter('coup')};
+})();
+</script>
+<script>
+/* smooth scroll-reveal, button ripple, timer tick */
+(function(){
+  var SEL=['.section-header','.highlight-card','.category-card','.deal-card','.product-card','.trending-card','.coupon-card-v2','.review-card','.hero-side-card','.newsletter-card','.footer-grid>*','.brand-logos-container'].join(',');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io=null;
+  if('IntersectionObserver' in window&&!reduce){
+    io=new IntersectionObserver(function(entries){
+      var n=0;
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target;
+        el.style.setProperty('--rd',(Math.min(n,6)*0.07).toFixed(2)+'s');
+        n++;
+        el.classList.add('in');
+        io.unobserve(el);
+        setTimeout(function(){el.classList.remove('reveal','in');el.style.removeProperty('--rd')},1400);
+      });
+    },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  }
+  function scan(root){
+    if(!io)return;
+    var list=[];
+    if(root.nodeType!==1)return;
+    if(root.matches&&root.matches(SEL))list.push(root);
+    if(root.querySelectorAll)list.push.apply(list,root.querySelectorAll(SEL));
+    list.forEach(function(el){
+      if(el.dataset.rv)return;
+      el.dataset.rv='1';
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+  var queued=false,pending=[];
+  function flush(){queued=false;var p=pending;pending=[];p.forEach(scan)}
+  function init(){
+    scan(document.body);
+    new MutationObserver(function(muts){
+      muts.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)pending.push(n)})});
+      if(pending.length&&!queued){queued=true;requestAnimationFrame(flush)}
+    }).observe(document.body,{childList:true,subtree:true});
+
+    /* seconds/minutes pop when the number changes */
+    var deal=document.getElementById('dealOfDay');
+    if(deal&&!reduce){
+      var last={};
+      setInterval(function(){
+        ['dH','dM','dS'].forEach(function(id){
+          var el=document.getElementById(id);
+          if(!el)return;
+          var v=el.textContent;
+          if(last[id]!==undefined&&last[id]!==v){el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}
+          last[id]=v;
+        });
+      },250);
+    }
+  }
+  /* click ripple on buy buttons */
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.btn-buy');
+    if(!b||reduce)return;
+    var r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*2;
+    var dot=document.createElement('span');
+    dot.className='ripple-dot';
+    dot.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px';
+    b.appendChild(dot);
+    setTimeout(function(){dot.remove()},650);
+  },true);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
 </body>
