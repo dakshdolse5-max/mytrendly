@@ -883,6 +883,10 @@ body{background:var(--light)}
 .product-img-container{height:270px}
 .product-card .product-badge{top:258px}
 }
+/* ============ FIT GRID: when all products fit on one screen, fill the columns row by row (no empty space) ============ */
+.products-grid.fit-grid{grid-auto-flow:row !important;grid-template-rows:none !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;grid-auto-columns:auto !important;overflow-x:hidden;scroll-snap-type:none}
+@media(min-width:992px){.products-grid.fit-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}}
+.products-grid.fit-grid>div[style*="grid-column"]{grid-column:1 / -1 !important;grid-row:auto !important}
     </style>
     <script>/* placeholder so early image errors never throw; replaced by the real handlers below */window.logoError=window.imgFallback=function(){};</script>
     <!-- Vercel Web Analytics + Speed Insights (active only on Vercel deployments) -->
@@ -4020,6 +4024,30 @@ function close404() {
     arr.forEach(function(el){el.classList.add('reveal');io.observe(el)});
     /* safety net: never leave anything hidden */
     setTimeout(function(){arr.forEach(function(el){if(el.classList.contains('reveal')&&!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)el.classList.add('in')}})},2500);
+})();
+</script>
+<script>
+/* Fit grid: if every product fits on one screen (phone 3x3, tablet 3x2, laptop 4x2), lay them out row by row
+   so the columns are filled evenly; only bigger lists use the swipe / arrow slider. */
+(function(){
+    var g=document.getElementById('productsGrid');
+    if(!g)return;
+    function capacity(){
+        var w=window.innerWidth;
+        if(w<=600)return 9;
+        if(w<992)return 6;
+        return 8;
+    }
+    function apply(){
+        var n=g.querySelectorAll('.product-card:not([data-lp])').length;
+        var fit=n<=capacity();
+        g.classList.toggle('fit-grid',fit);
+        if(fit)Array.prototype.forEach.call(g.querySelectorAll('[data-lp]'),function(x){x.remove()});
+    }
+    if(window.MutationObserver)new MutationObserver(apply).observe(g,{childList:true});
+    window.addEventListener('resize',apply);
+    window.addEventListener('load',apply);
+    apply();
 })();
 </script>
 </body>
