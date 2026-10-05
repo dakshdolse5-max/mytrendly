@@ -3958,17 +3958,23 @@ function close404() {
         obs.observe(g,{childList:true});
         if(window.ResizeObserver)new ResizeObserver(function(){if(!building&&g.clientWidth!==lastW){restore=null;schedule()}}).observe(g);
         window.addEventListener('load',schedule);
+        var touching=false;
+        /* jump back into the middle copy only when the row is idle and no finger is down (a jump mid-drag would cancel the swipe) */
+        function settle(){
+            if(touching||!loopOn||building||scheduled)return;
+            var p=g.scrollLeft;
+            if(p>=W&&p<2*W)return;
+            g.style.scrollBehavior='auto';g.style.scrollSnapType='none';
+            g.scrollLeft=mod(p-W,W)+W;
+            requestAnimationFrame(function(){g.style.scrollSnapType=''});
+        }
+        g.addEventListener('touchstart',function(){touching=true;clearTimeout(t)},{passive:true});
+        ['touchend','touchcancel'].forEach(function(ev){g.addEventListener(ev,function(){touching=false;clearTimeout(t);t=setTimeout(settle,140)},{passive:true})});
         g.addEventListener('scroll',function(){
             if(!loopOn||building||scheduled)return;
             logical=mod(g.scrollLeft-W,W);
             clearTimeout(t);
-            t=setTimeout(function(){
-                var p=g.scrollLeft;
-                if(p>=W&&p<2*W)return;
-                g.style.scrollBehavior='auto';g.style.scrollSnapType='none';
-                g.scrollLeft=mod(p-W,W)+W;
-                requestAnimationFrame(function(){g.style.scrollSnapType=''});
-            },120);
+            if(!touching)t=setTimeout(settle,120);
         },{passive:true});
         schedule();
         return {schedule:schedule};
