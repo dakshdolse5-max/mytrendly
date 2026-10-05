@@ -1027,6 +1027,12 @@ html{scroll-behavior:smooth}
 }
 @media (prefers-reduced-motion:reduce){.reveal:not(.in){opacity:1}html{scroll-behavior:auto}}
 @media print{.reveal:not(.in){opacity:1}}
+
+/* ===== LAPTOP / DESKTOP (992px and up): 3 columns in All Products (Coupon Codes already 3) ===== */
+@media(min-width:992px){
+  .products-grid{--cols:3;--gap:18px}
+  .products-grid>div[style*="grid-column"]{grid-column:1 / span 3 !important}
+}
     </style>
     <script>/* placeholder so early image errors never throw; replaced by the real handlers below */window.logoError=window.imgFallback=function(){};</script>
     <!-- Vercel Web Analytics + Speed Insights (active only on Vercel deployments) -->
@@ -2617,6 +2623,7 @@ function closeAdminLogin() {
 }
 
 async function adminLogin() {
+    ensureAdminUI();
     const email = document.getElementById('adminUser').value.trim();
     const pass = document.getElementById('adminPass').value;
     if (!email || !pass) {
