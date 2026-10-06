@@ -600,7 +600,7 @@ body{background:var(--light)}
 @media(max-width:600px){.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img-container{height:170px}.product-card .product-badge{top:158px}.price-range{padding:5px 12px;font-size:13px}.shop-sidebar .filter-bar select{flex:1}}
 /* ===== Mobile: 2-row grid on screen, swipe sideways for more ===== */
 @media(max-width:600px){
-.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,3),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/3);gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:2px 2px 14px;margin:0 -4px;scrollbar-width:none}
+.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,3),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 16px)/3);gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;overscroll-behavior-x:contain;padding:2px 2px 14px;margin:0 -4px;scrollbar-width:none}
 .products-grid::-webkit-scrollbar{display:none}
 .products-grid>.product-card{min-width:0;scroll-snap-align:start}
 .products-grid>div[style*="grid-column"]{grid-column:1 / span 2 !important;grid-row:1 / span 3;scroll-snap-align:start}
@@ -784,7 +784,7 @@ body{background:var(--light)}
 .js-anim .reveal.in{opacity:1;transform:none}
 /* ============ ALL PRODUCTS: laptop/tablet = 2-row slider with arrows (infinite loop); phone = swipe ============ */
 @media(min-width:601px){
-.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,2),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
+.products-grid{display:grid;grid-template-columns:none !important;grid-template-rows:repeat(var(--rows,2),auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none;padding:10px 0 14px;margin:0}
 .products-grid::-webkit-scrollbar{display:none}
 .products-grid>.product-card{min-width:0;scroll-snap-align:start}
 .products-grid>div[style*="grid-column"]{grid-column:1 / span 3 !important;grid-row:1 / span 2}
@@ -3779,8 +3779,8 @@ function close404() {
             it.forEach(function(el,i){el.style.gridColumn=(fit&&span>1&&i===visible-1)?('span '+span):''});
             g.classList.toggle('fit-grid',fit);
             g.style.setProperty('--rows',R);
-            if(big)g.setAttribute('data-noloop','');else g.removeAttribute('data-noloop');
-            if(fit||big)Array.prototype.forEach.call(g.querySelectorAll('[data-lp]'),function(x){x.remove()});
+            if(big||cfg.gridOnWide)g.setAttribute('data-noloop','');else g.removeAttribute('data-noloop');
+            if(fit||big||cfg.gridOnWide)Array.prototype.forEach.call(g.querySelectorAll('[data-lp]'),function(x){x.remove()});
             it.forEach(function(el,i){if(big&&i>=shown)el.setAttribute('hidden','');else el.removeAttribute('hidden')});
             if(big&&n>shown){
                 bar.hidden=false;
