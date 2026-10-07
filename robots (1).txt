@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mytrendly.vercel.app/api/sitemap.xml
