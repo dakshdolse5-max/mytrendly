@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mytrendly.vercel.app/api/sitemap.xml
+Sitemap: https://mytrendly.store/api/sitemap.xml
