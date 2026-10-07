@@ -1,13 +1,9 @@
 // Auto-generated sitemap.xml - Vercel Serverless Function.
-// Lives at /api/sitemap.xml.js, which Vercel automatically serves at the URL /api/sitemap.xml.
-// It queries Supabase live, on every request, so it always reflects however many products,
-// coupons and trending articles currently exist - nothing to regenerate or upload by hand.
-
 const SUPABASE_URL = "https://ofnscvxzikkjjpuiegfs.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mbnNjdnh6aWtrampwdWllZ2ZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkwMjczNzEsImV4cCI6MjEwNDYwMzM3MX0.Vl-mcEmHntX1SBpbfhplhxKPUP1DL0Qsxjz1ab08N2U";
 
-// Change this if the site ever moves to a different domain.
-const SITE_URL = "https://mytrendly.vercel.app";
+// Your Main Domain
+const SITE_URL = "https://mytrendly.store";
 
 async function fetchTable(table, select) {
     try {
@@ -33,9 +29,6 @@ function urlEntry(loc, lastmod, changefreq, priority) {
 }
 
 module.exports = async (req, res) => {
-    // Trending articles are the only content type with its own URL today (?trending=id, added
-    // via history.pushState in index.html). Products and coupons live inside the single home
-    // page and don't have separate URLs yet, so only the home page represents them here.
     const trending = await fetchTable("trending_posts", "id,updated_at,created_at");
 
     const urls = [
