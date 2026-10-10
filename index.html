@@ -1370,11 +1370,15 @@ body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-ri
 
 /* hero carousel scales with the screen instead of fixed pixel sizes (320px SE ... 430px Pro Max) */
 @media(max-width:480px){
-  .mtc{--item:clamp(48px,14.5vw,64px);--radius:clamp(118px,calc(50vw - 13px - var(--item)/2 - 4px),190px);height:max(440px,calc(var(--radius)*2 + var(--item) + 110px))}
-  .mtc .center{max-width:none;width:calc(100% - 24px)}
-  .mtc .mtc-sw{width:min(340px,100%)}
-  .mtc .brand img{height:clamp(32px,9.5vw,42px)}
-  .mtc .tagline{font-size:clamp(12.5px,3.8vw,15px)}
+  /* everything (small logo, tagline, search, button) sits INSIDE the ring of floating products, like on desktop */
+  .mtc{--item:clamp(48px,14.5vw,64px);--radius:clamp(118px,calc(50vw - 13px - var(--item)/2 - 4px),190px);
+       --cw:calc(var(--radius)*2 - var(--item) - 6px);height:max(440px,calc(var(--radius)*2 + var(--item) + 110px))}
+  .mtc .center{max-width:none;width:var(--cw)}
+  .mtc .mtc-sw{width:100%}
+  .mtc .brand{margin-bottom:6px}
+  .mtc .brand img{width:calc(var(--cw)*.68);height:auto;max-width:100%}
+  .mtc .tagline{font-size:clamp(11.5px,3.4vw,14px);margin-bottom:14px;white-space:nowrap}
+  .mtc .cta{padding:10px 22px;font-size:13px}
 }
 @media(max-width:340px){.mtc .mtc-sbtn{width:30px;height:30px}.mtc .cta{padding:10px 20px;font-size:12.5px}}
 
