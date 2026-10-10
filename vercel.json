@@ -55,6 +55,18 @@
     {
       "source": "/your-rights",
       "destination": "/index.html"
+    },
+    {
+      "source": "/article/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/product/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/coupon/:slug",
+      "destination": "/index.html"
     }
   ]
 }
