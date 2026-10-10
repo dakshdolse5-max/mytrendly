@@ -1,6 +1,60 @@
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/api/sitemap.xml.js" },
-    { "source": "/api/sitemap.xml", "destination": "/api/sitemap.xml.js" }
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap.xml.js"
+    },
+    {
+      "source": "/api/sitemap.xml",
+      "destination": "/api/sitemap.xml.js"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliate-disclosure",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dpdp-act-compliance",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/report-ip-infringement",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/data-and-compliance",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/data-security",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/your-rights",
+      "destination": "/index.html"
+    }
   ]
 }
